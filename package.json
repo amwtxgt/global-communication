@@ -1,0 +1,68 @@
+{
+  "name": "global-communication",
+  "version": "1.0.0",
+  "description": "Electron 全局通信系统，支持主进程和渲染进程之间的消息通信",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "exports": {
+    ".": {
+      "main": "./dist/main.js",
+      "types": "./dist/main.d.ts"
+    },
+    "./main": {
+      "main": "./dist/main.js",
+      "types": "./dist/main.d.ts"
+    },
+    "./preload": {
+      "main": "./dist/preload.js",
+      "types": "./dist/preload.d.ts"
+    },
+    "./renderer": {
+      "main": "./dist/renderer.js",
+      "types": "./dist/renderer.d.ts"
+    },
+    "./vue": {
+      "main": "./dist/vueSetup.js",
+      "types": "./dist/vueSetup.d.ts"
+    },
+    "./vite-plugin": {
+      "main": "./dist/vite-plugin.js",
+      "types": "./dist/vite-plugin.d.ts"
+    },
+    "./webpack-plugin": {
+      "main": "./dist/webpack-plugin.js",
+      "types": "./dist/webpack-plugin.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "electron",
+    "ipc",
+    "communication",
+    "vue",
+    "vite",
+    "webpack"
+  ],
+  "author": "黄敏",
+  "license": "MIT",
+  "peerDependencies": {
+    "electron": "^20.0.0",
+    "vue": "^3.0.0",
+    "vite": "^4.0.0",
+    "webpack": "^5.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.0",
+    "@types/node": "^18.0.0",
+    "electron": "^20.0.0",
+    "vue": "^3.0.0",
+    "vite": "^4.0.0",
+    "webpack": "^5.0.0"
+  }
+}
