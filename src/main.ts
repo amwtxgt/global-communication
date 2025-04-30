@@ -22,7 +22,7 @@
  */
 
 import {ipcMain, webContents, IpcMainEvent} from 'electron'
-
+import { Client, Subscribes } from './gc'
 /*
  * mqtt main端
  * @param {String} serverUrl mqtt服务地址

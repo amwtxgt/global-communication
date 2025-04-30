@@ -10,18 +10,18 @@
  * */
 
 
- interface GcParams {
+export interface GcParams {
 
 }
 
- type Subscribes = {
+export type Subscribes = {
 	[P in keyof GcParams]: (...param: [...GcParams[P]]) => void
 }
 
- type IpcTopic = keyof GcParams
+export type IpcTopic = keyof GcParams
 
 //gc通讯类
- interface Client {
+export interface Client {
 	//发送消息
 
 	on<T extends string>(topic: T, param: T extends keyof Subscribes ? Subscribes[T] : (...p: any[]) => void, noSendSub?: boolean): void

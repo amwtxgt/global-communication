@@ -33,7 +33,7 @@
 
 import {onBeforeUnmount} from 'vue'
 import renderer from './renderer'
-
+import { Subscribes } from './gc'
 /**
  * 订阅配置类型
  * 用于定义需要订阅的主题和对应的处理函数

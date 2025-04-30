@@ -26,6 +26,8 @@
  * ```
  */
 
+import { Client, Subscribes, IpcTopic } from "./gc"
+
 //在渲染器进程 (网页) 中。
 /*
  * mqtt 渲染端处理
@@ -37,7 +39,7 @@
  * 值：是一个数组，存储该主题对应的回调函数
  */
 const topics: {[topic: string]: Function[]} = {}
-
+  
 //当前渲染层id
 const webContentId: number = globalThis._gc_?globalThis._gc_.getWebContentId():1
 
@@ -45,7 +47,7 @@ const webContentId: number = globalThis._gc_?globalThis._gc_.getWebContentId():1
  * 渲染进程通信接口
  * 扩展了基础的 Client 接口，添加了消息分拣功能
  */
-interface RendererClient extends Client {
+interface RendererClient extends Client  {
   sortingMessages(topic: string, ...msg: any): void
 }
 
