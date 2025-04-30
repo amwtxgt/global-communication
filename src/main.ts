@@ -23,11 +23,7 @@
 
 import {ipcMain, webContents, IpcMainEvent} from 'electron'
 import { Client, Subscribes } from './gc'
-/*
- * mqtt main端
- * @param {String} serverUrl mqtt服务地址
- * @param {Array} 中间件
- * */
+
 class IpcMain implements Client {
   /**
    * 渲染进程订阅的主题映射
@@ -79,9 +75,6 @@ class IpcMain implements Client {
    * 初始化 IPC 事件监听
    */
   constructor() {
-
-    
-
     //获取windowBrowser id
     ipcMain.on('$ipc/webContentId/get', (e: IpcMainEvent) => {
       e.returnValue = e.sender.id
